@@ -1,0 +1,1174 @@
+$light-brown: #a26304
+$darck-yello: #f9a320
+$yello: #ffc571
+$oliva: #72aa91
+$oliva-btn: #9dc4b0
+$blue: #4b3968
+$blue-slider: #2b174e
+$grey: #788686
+$darck-grey: #3f5252
+$light-grey: #f0ece9
+$pinc: #e28777
+$light-pinc: #fae6d9
+$brown: #7f5d4c
+$white: #fff
+
+$cursive: 'Neucha', cursive
+$sans-serif: 'Open Sans', sans-serif
+
+@mixin transition($time)
+  transition:         all $time ease
+
+@mixin image
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  min-width: 100%
+  min-height: 100%
+
+
+//var
+
+/*default style*/
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+.body
+  font-family: $sans-serif
+  padding: 0
+  margin: 0
+  background: #fff
+  font-size: 16px
+  position: relative
+h1, h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
+  font-family: $cursive
+ul, li
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+a
+  display: block
+  text-decoration: none
+  @include transition(.3s)
+  &:hover
+    text-decoration: none
+  &:focus
+    color: $light-grey
+a[href^="tel"]
+  color: $white
+.image
+  position: relative
+img
+  max-width: 100%
+  height: auto
+  display: inline-block
+*:focus, *:hover, *.active, *:active, *:visited, button, input, select
+  outline: 0 !important
+  text-decoration: none !important
+  box-shadow: none !important
+button, a, .jq-selectbox
+  cursor: pointer
+section
+  position: relative
+/*default style*/
+.subtitle
+  font-family: $cursive
+.underline
+  display: inline-block
+  padding-bottom: 10px
+  position: relative
+  width: auto
+.underline::after
+  content: ''
+  display: block
+  width: 100%
+  height: 10px
+  background: url("../images/underline.png")no-repeat center
+  background-size: contain
+  position: absolute
+  bottom: 0
+  left: 50%
+  transform: translate(-50%, 0)
+  z-index: 1
+.btn
+  background: $oliva-btn
+  border-radius: 40px
+  padding: 20px 48px
+  color: $white
+  text-transform: uppercase
+  font-size: 28px
+  font-family: $cursive
+  text-align: center
+  position: relative
+  transition: all 0.2s linear
+  cursor: pointer
+  &::after
+    content: ''
+    position: absolute
+    top: -4px
+    left: -4px
+    background: transparent
+    width: calc(100% + 2px)
+    height: calc(100% + 2px)
+    border: 2px solid $oliva
+    border-radius: 40px
+    transition: all 0.2s linear, color 0s linear, background 0s linear
+  &:hover, &.not-active
+    color: $darck-grey
+    background: $white
+    &::after
+      width: 100%
+      height: 100%
+      top: 0
+      left: 0
+  &.not-active:hover
+    background: $oliva-btn
+  &.btn-tab
+    padding: 0 40px
+    line-height: 60px
+    text-transform: none
+    & + .btn.btn-tab
+      margin-left: 15px
+.btn-wight
+  background: $white
+  color: $darck-grey
+  border: 2px solid $oliva
+  &:after
+    display: none
+  &:hover
+    background: $oliva-btn
+    color: $white
+    border: 2px solid transparent
+.header
+  position: absolute
+  width: 100%
+  color: $white
+  height: 190px
+  padding: 15px 0 30px
+  top: 0
+  left: 50%
+  transform: translate(-50%,0)
+  z-index: 120
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    width: 100%
+    height: 142px
+    background: $yello
+  .logo
+    position: static
+    text-align: center
+    &:before
+      content: ''
+      display: block
+      width:  100%
+      height: 47px
+      position: absolute
+      bottom: -20px
+      left: 0
+      z-index: -1
+      background: url("../images/header_logo_before.png")no-repeat center
+      background-size: contain
+  .contacts
+    text-align: right
+    a
+      display: inline-block
+      &:hover
+        color: $light-brown
+
+.header-item-1
+  background: url("../images/header_item_bg_1.png")no-repeat 15px center
+  -webkit-background-size: auto
+  background-size: auto
+  p
+    font-size: 18px
+    padding-left: 66px
+.header-item-2
+  background: url("../images/header_item_bg_2.png")no-repeat 15px center
+  -webkit-background-size: auto
+  background-size: auto
+  p
+    font-size: 18px
+    padding-left: 66px
+.header-title
+  color: $light-brown
+  font-size: 16px
+  font-family: $sans-serif
+  text-transform: uppercase
+  font-weight: 700
+  white-space: nowrap
+  margin-bottom: 25px
+  &.header-item-contacts
+    font-family: $cursive
+    text-transform: none
+    text-align: right
+    font-size: 28px
+
+
+.main-content
+  padding-top: 140px
+
+.hero
+  background: url("../images/section_first_bg.png") no-repeat center
+  -webkit-background-size: cover
+  background-size: cover
+  width: 100%
+  height:  670px
+  display: flex
+  align-items: center
+.hero-info
+  padding-left: 90px
+.hero-title
+  color: $yello
+  font-size: 60px
+  line-height: 56px
+  margin-bottom: 18px
+.hero-subtitle
+  background: url("../images/pinc_title_bg.png") no-repeat left
+  background-size: contain
+  color: $oliva
+  font-size: 22px
+  width: auto
+  padding: 15px 48px
+  margin-bottom: 40px
+
+
+.comments
+  margin-top: -22px
+  padding: 76px 58px
+  background: url("../images/comments_bg.png") no-repeat center
+  background-size: cover
+  text-align: center
+.comments-slider
+  position: relative
+  .slick-arrow
+    border: none
+    background: $white
+    font-size: 0
+    color: transparent
+    position: absolute
+    top: 50%
+    z-index: 10
+    transform: translate(0, -50%)
+    height: 70px
+    border-radius: 50%
+    width: 70px
+    transition: all 0.3s linear
+    &:hover
+      &.slick-prev
+        &::after
+          transform: translate(-15px, 0)
+    &:hover
+      &.slick-next
+        &::after
+          transform: translate(15px, 0)
+    &::after
+      content: ''
+      width: 100px
+      height: 70px
+      position: absolute
+      top: 0
+      z-index: -1
+    &.slick-prev
+      left: 60px
+      &::after
+        background: url("../images/arrow_left.png") no-repeat right center
+        left: 0
+    &.slick-next
+      right: 60px
+      &::after
+        background: url("../images/arrow_right.png") no-repeat left center
+        right: 0
+
+.hs-descr
+  font-size: 42px
+  line-height: 1
+  color: $blue
+  text-align: center
+.hs-author
+  color: $grey
+  font-size: 18px
+  text-align: center
+
+.happy-slider
+  background: url("../images/happy_slider_bg.png")no-repeat center
+  -webkit-background-size: cover
+  background-size: cover
+
+
+.catalog
+  padding: 60px 0
+.control-tabs
+  padding: 25px 0
+.ct-card
+  height: 580px
+  position: relative
+.ct-item
+  position: relative
+  &:nth-child(even) .row
+    flex-direction: row-reverse
+    .ct-info
+      margin-right: 120px
+      margin-left: 0
+    .small
+      right: auto
+      left: -70px
+      z-index: 1
+    .image.ct-image
+      &::before
+        right: auto
+        left: 0
+      &::after
+        left: auto
+        right: 0
+  .small
+    border-radius: 50%
+    background: $light-pinc
+    position: absolute
+    bottom: 100px
+    right: -60px
+    width: 170px
+    height: 170px
+    img
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+.ct-info
+  margin-left: 120px
+  margin-right: 0
+  p
+    font-weight: 700
+    color: $brown
+    font-size: 22px
+    line-height: 32px
+    margin-bottom: 20px
+  .ct-item-descr
+    margin-bottom: 42px
+    li
+      padding-left: 30px
+      line-height: 38px
+      &::before
+        content: ''
+        display: inline-block
+        width: 10px
+        height: 10px
+        background: $pinc
+        line-height: 38px
+        border-radius: 50%
+        margin-right: 20px
+.image.ct-image
+  width: 100%
+  height: 580px
+  &::before
+    content: ''
+    border-radius: 50%
+    background: $yello
+    width: 420px
+    height: 420px
+    position: absolute
+    bottom: 0
+    right: 0
+    z-index: -1
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    border-radius: 50%
+    background: $yello
+    width: 420px
+    height: 420px
+
+  //img:first-child
+  img
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    z-index: 0
+  //img:last-child
+  //  position: absolute
+  //  right: 60px
+  //  top: 52%
+  //  z-index: 0
+  //  transform: translate(0, -50%)
+
+.btn-more
+  background: transparent url("../images/arrow_more.png") no-repeat 90% center
+  border: 2px solid transparent
+  color: $grey
+  padding: 0 40px
+  line-height: 60px
+  text-transform: none
+  &::after
+    display: none
+  &:hover
+    color: $oliva
+    background: transparent url("../images/arrow_more.png") no-repeat 100% center
+.btn-white
+  background: $white
+  border: 2px solid $oliva
+  color: $grey
+  padding: 0 40px
+  line-height: 60px
+  text-transform: none
+  margin-right: 25px
+  &:after
+    display: none
+  &:hover
+    background: $oliva-btn
+    color: $white
+
+
+.ct-item-title
+  color: $yello
+  font-size: 42px
+  line-height: 64px
+  margin-bottom: 32px
+.tab-content
+  width: 0
+  height: 0
+  position: absolute
+  top: 0
+  left: 0
+  overflow: hidden
+  opacity: 0
+  transition: all .3s linear 0.1s
+  &.active
+    position: static
+    width: auto
+    height: auto
+    display: block
+    opacity: 1
+.ct-title
+  font-size: 80px
+  line-height: 64px
+  color: $yello
+  margin-bottom: 20px
+.ct-subtitle
+  background: url("../images/catalog_title_bg.png") no-repeat center
+  background-size: contain
+  padding: 30px
+  display: inline-block
+  line-height: 28px
+  font-size: 28px
+  color: $light-brown
+  margin-bottom: 0
+
+.terms-title
+  display: inline-block
+  padding: 12px 0
+  width: 190px
+  text-align: center
+  font-size: 41px
+  color: #fff
+  background: url(../images/terms_title_bg.png) no-repeat top left
+  -webkit-background-size: contain
+  background-size: contain
+.terms-item
+  text-align: center
+  padding: 60px 15px
+  .image
+    img
+      margin-top: 18px
+      margin-bottom: 24px
+  .terms-descr
+    line-height: 22px
+    padding: 0 30px
+.happy-slider
+  overflow: hidden
+  padding: 130px 0 100px
+  .slick-arrow
+    border: none
+    background: $white
+    font-size: 0
+    color: transparent
+    position: absolute
+    top: 40%
+    z-index: 10
+    transform: translate(0, -50%)
+    height: 70px
+    border-radius: 50%
+    width: 70px
+    transition: all 0.3s linear
+    &:hover
+      &.slick-prev
+        &::after
+          transform: translate(-15px, 0)
+    &:hover
+      &.slick-next
+        &::after
+          transform: translate(15px, 0)
+    &::after
+      content: ''
+      width: 100px
+      height: 70px
+      position: absolute
+      top: 0
+      z-index: -1
+    &.slick-prev
+      left: 14%
+      &::after
+        background: url("../images/arrow_left.png") no-repeat right center
+        left: 0
+    &.slick-next
+      right: 14%
+      &::after
+        background: url("../images/arrow_right.png") no-repeat left center
+        right: 0
+  .slick-dots
+    text-align: center
+    li
+      display: inline-block
+      width: 26px
+      height: 26px
+      text-align: center
+      line-height: 24px
+      transition: all 0.2s linear
+      button
+        margin-top: 5px
+        width: 16px
+        height: 16px
+        border: none
+        background: $pinc
+        border-radius: 50%
+        color: transparent
+        transition:  all 0.2s linear
+      &.slick-active
+        background: url("../images/hs_dots.png") no-repeat center
+        background-size: cover
+        button
+          background: $white
+.hs-item
+  padding: 34px
+  text-align: center
+  .image
+    position: relative
+    width: 100%
+    text-align: center
+    background: url("../images/hs_photo_bg.png") no-repeat center
+    background-size: contain
+    padding: 24px
+    padding-right: 32px
+    padding-top: 20px
+    margin-bottom: 46px
+    img
+      display: inline-block
+      border-radius: 10px
+.hs-subtitle
+  display: inline-block
+  font-size: 28px
+  line-height: 28px
+  color: $oliva
+  padding: 30px 40px
+  background: url("../images/hs_title_bg.png") no-repeat center
+  background-size: contain
+  margin-bottom: 20px
+.hs-descr
+  font-size: 42px
+  line-height: 42px
+  color: $darck-grey
+.hs-author
+  font-size: 18px
+  color: $grey
+  line-height: 28px
+.hs-title
+  font-size: 80px
+  color: $blue
+  line-height: 64px
+  text-align: left
+  margin-bottom: 20px
+
+
+.cloud
+  width: 211px
+  height: 257px
+  position: absolute
+  background: url("../images/paralax_1.png") no-repeat center
+  background-size: contain
+  z-index: 100
+.plain
+  width: 132px
+  height: 225px
+  position: absolute
+  background: url("../images/paralax_2.png") no-repeat center
+  background-size: contain
+  z-index: 100
+.cloud-1
+  left: 170px
+  top: 200px
+.cloud-2
+  left: 60px
+  bottom: 270px
+.cloud-3
+  right: -50px
+  top: 200px
+.plain-1
+  top: 180px
+  left: 60px
+.plain-2
+  right: 300px
+  bottom: 200px
+
+.tecnology
+  padding: 20px 0 0
+  &::before
+    content: ''
+    position: absolute
+    bottom: 99%
+    left: 0
+    z-index: 10
+    width: 100%
+    height: 80px
+    background: url("../images/footer_top_bg.png") no-repeat center
+    background-size: cover
+  &::after
+    content: ''
+    position: absolute
+    top: 99%
+    left: 0
+    z-index: 10
+    width: 100%
+    height: 80px
+    background: url("../images/footer_top_bg.png") no-repeat center
+    background-size: cover
+    transform: rotate(180deg)
+.tecnology-title
+  font-size: 80px
+  line-height: 64px
+  color: $blue
+  width: 60%
+  margin-bottom: 25px
+.tecnology-subtitle
+  background: url("../images/tech_title_bg.png") no-repeat center
+  background-size: cover
+  display: inline-block
+  padding: 20px 40px
+  line-height: 30px
+  font-size: 28px
+  color: $light-brown
+  text-align: center
+.tc-items-list
+  .image
+    background: url("../images/tech_item_bg.png") no-repeat center
+    background-size: contain
+    padding: 15px
+    text-align: center
+.tc-item
+  padding: 28px 0
+.tc-item-num
+  font-family: $cursive
+  font-size: 42px
+  line-height: 42px
+  width: 50px
+  height: 50px
+  position: relative
+  z-index: 1
+  &::after
+    content: ''
+    border-radius: 50%
+    position: absolute
+    bottom: 12px
+    left: 0
+    z-index: -1
+    background: $light-pinc
+    width: 22px
+    height: 22px
+  &::before
+    content: ''
+    border-radius: 50%
+    position: absolute
+    top: 7px
+    right: 20px
+    z-index: -1
+    background: $yello
+    width: 10px
+    height: 10px
+
+.tc-item-title
+  font-size: 28px
+  line-height: 32px
+  color: $darck-grey
+  padding-right: 30px
+  margin-bottom: 15px
+.tc-item-text
+  padding-right: 30px
+
+.product
+  background: $light-grey url("../images/tech_bg.png") no-repeat center
+  background-size: cover
+  padding: 100px 0 300px
+  .image
+    background: $oliva
+    border-radius: 50%
+    width: 900px
+    height: 900px
+    position: relative
+    z-index: 0
+    margin: auto
+    display: flex
+    justify-content: center
+    align-items: center
+    &:before
+      content: ''
+      border-radius: 50%
+      position: absolute
+      top: 20px
+      left: 40px
+      width: 800px
+      height: 800px
+      background: $white
+      z-index: 0
+
+    img
+      width: 60%
+      position: absolute
+      left: 20%
+      transform: rotate(45deg)
+.product-title
+  font-size: 80px
+  line-height: 70px
+  color: $darck-grey
+  padding-right: 20%
+  margin-bottom: 20px
+.product-subtitle
+  font-size: 28px
+  color: $light-brown
+  text-align: center
+  display: inline-block
+  background: url('../images/product_title_bg.png') no-repeat center
+  background-size: cover
+  padding: 20px 40px
+  line-height: 30px
+
+.btn-product
+  display: block
+  width: 60px
+  height: 60px
+  background: url("../images/product_btn.png") no-repeat center
+  background-size: auto
+  transition: all 0.1s linear
+  &.active
+    background: url("../images/product_btn_active.png") no-repeat center -5px
+  &:hover
+    background: url("../images/product_btn_active.png") no-repeat center -5px
+.product-descr
+  display: none
+  width: 266px
+  background: #74aa91
+  border-radius: 50px
+  padding: 30px 40px
+  position: absolute
+  bottom: 60%
+  z-index: 0
+  margin-left: -103px
+  color: $white
+  line-height: 22px
+  &::before
+    content: ''
+    position: absolute
+    top: 99%
+    left: 50%
+    transform: translate(-50%, 0)
+    border: 14px solid transparent
+    border-top: 14px solid #74aa91
+  &.active
+    display: block
+.thenk-bottom
+  background: $darck-yello
+  border-radius: 50%
+  width: 210px
+  height: 210px
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 0 46px
+  color: $white
+  text-align: center
+  line-height: 1
+  position: absolute
+  left: -120px
+  top: 50%
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    z-index: 1
+    transform: translate(-50%, -50%)
+    background: transparent
+    border: 1px dashed $white
+    width: 232px
+    height: 232px
+    border-radius: 50%
+  &.active
+    display: block
+.product-adventages
+  position: relative
+  width: 100%
+  height: 100%
+.product-adventages li
+  position: absolute
+  z-index: 10
+.product-adventages li:first-child
+  left: 80%
+  top: 14%
+.product-adventages li:nth-child(2)
+  left: 170px
+  top: 80%
+.product-adventages li:nth-child(3)
+  left: 70%
+  top: 54%
+.product-adventages li:nth-child(4)
+  left: 40%
+  top: 28%
+.product-adventages li:nth-child(5)
+  left: 39%
+  top: 56%
+.product-adventages li:nth-child(6)
+  left: 18%
+  top: 46%
+
+
+.guaranty
+  background: $blue
+  position: relative
+  color: $white
+  margin-bottom: 65px
+  padding: 35px 0
+  &::after
+    content: ''
+    width: 100%
+    height: 80px
+    position: absolute
+    top: 99%
+    left: 0
+    z-index: 0
+    background: url("../images/mama_bg_bottom.png") no-repeat center
+    background-size: cover
+  &::before
+    content: ''
+    width: 100%
+    height: 80px
+    position: absolute
+    bottom: 99%
+    left: 0
+    z-index: 1
+    background: url("../images/mama_bg_top.png") no-repeat center
+    background-size: cover
+  .image
+    position: absolute
+    top: -200px
+    z-index: 10
+    &::before
+      content: ''
+      position: absolute
+      top: -15px
+      left: -30px
+      z-index:
+      width: 550px
+      height: 510px
+      background: url("../images/mama_bg_img.png") no-repeat center
+      background-size: cover
+    img
+      position: relative
+      z-index: 1
+.guaranty-title
+  font-size: 80px
+  line-height: 64px
+  margin-bottom: 25px
+
+.guaranty-subtitle
+  font-size: 28px
+  line-height: 33px
+  padding-bottom: 18px
+  &:after
+    background-size: cover
+
+.location
+  position: relative
+  height: 630px
+  .contacts
+    background: $white
+    border-radius: 40px
+    color: $yello
+    padding: 40px 34px
+    margin-top: 60px
+    font-size: 18px
+    line-height: 22px
+    a
+      display: inline-block
+      color: $yello
+      font-size: 24px
+      line-height: 28px
+    .schedule
+      margin-top: 20px
+  input
+    width: 100%
+    display: inline-block
+    border: none
+    background: $light-pinc
+    border-radius: 19px
+    line-height: 38px
+    padding: 0 30px
+    margin-bottom: 15px
+  address
+    font-size: 28px
+    line-height: 34px
+    margin-bottom: 20px
+  .btn-wight
+    display: block
+    line-height: 60px
+    border-radius: 30px
+    padding: 0 30px
+    width: 176px
+    margin: auto
+
+.map
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: -1
+
+
+.footer
+  position: relative
+  font-size: 42px
+  background: $white
+  color: $yello
+  line-height: 50px
+  padding-bottom: 100px
+  &::before
+    content: ''
+    background: url("../images/footer_top_bg.png") no-repeat center
+    background-size: cover
+    width: 100%
+    height: 81px
+    position: absolute
+    bottom: 99%
+  .logo
+    display: block
+    text-align: center
+    margin-top: -90px
+
+
+//popup
+.modal
+  &.modal-order
+    .modal-header
+      padding: 40px 30px 15px
+      border-bottom: none
+      background: #f8f7f9
+      position: relative
+      border-top-left-radius: 0.5rem
+      border-top-right-radius: 0.5rem
+      .ct-item-title
+        margin-bottom: 0
+      &::after
+        content: ''
+        height: 0
+        width: 90%
+        border: 1px dashed #dbdbdc
+        display: inline-block
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translate(-50%, 0)
+    button.close, button.plus, button.minus
+      width: 42px
+      height: 42px
+      text-align: center
+      background: $white
+      border-radius: 50%
+      position: absolute
+      top: 15px
+      right: 15px
+      border: none
+      box-shadow: none
+      color: #9fa8a8
+      font-size: 40px
+      span
+        color: #9fa8a8
+      &::after
+        width: 50px
+        height: 50px
+        content: ''
+        position: absolute
+        border-radius: 50%
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        border: 1px dashed #dbdbdc
+    button.plus
+      color: $yello
+      right: 15px
+      top: 52px
+      line-height: 40px
+      text-align: center
+    button.minus
+      color: $yello
+      left: 15px
+      top: 52px
+      line-height: 40px
+      text-align: center
+    .modal-body
+      background: #f8f7f9
+      padding: 44px 30px 30px
+      &::after
+        content: ''
+        height: 0
+        width: 90%
+        border: 1px dashed #dbdbdc
+        display: inline-block
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translate(-50%, 0)
+    form
+      .top-block
+        margin-bottom: 80px
+      label
+        line-height: 25px
+        padding-right: 70px
+        margin-bottom: 20px
+        span
+          display: block
+          font-weight: 700
+      input, textarea
+        display: block
+        background: $white
+        border: 2px solid $pinc
+        border-radius: 3px
+        line-height: 56px
+        margin-bottom: 20px
+        width: 100%
+        font-size: 18px
+        padding: 0 15px
+        &:focus
+          border: 2px solid $light-pinc
+          &:valid
+            border: 2px solid $oliva
+        &.num
+          width: 126px
+          margin: auto
+          text-align: center
+          font-size: 28px
+      textarea
+        line-height: 2
+        margin-bottom: 0
+
+    .modal-footer
+      background: #f8f7f9
+      padding: 15px 30px 45px
+      text-align: center
+      border-top: none
+      border-bottom-left-radius: 0.5rem
+      border-bottom-right-radius: 0.5rem
+      .btn
+        margin: auto
+    .jq-selectbox
+      display: block
+      ul
+        border: 2px solid $pinc
+        border-bottom-left-radius: 10px
+        border-bottom-right-radius: 10px
+        box-shadow: 0 4px 0 $grey
+        background: $white
+      li
+        box-sizing: border-box
+        line-height: 52px
+        font-size: 28px
+        padding: 0 15px
+        background: $white
+        width: 160px
+        transition: all 0.2s linear
+        &:hover
+          background: rgba(226, 135, 119, 0.3)
+      .jq-selectbox__select-text
+        background: $white
+        padding: 0 15px
+        line-height: 52px
+        border: 2px solid $pinc
+        width: 220px
+        border-top-right-radius: 10px
+        border-bottom-right-radius: 10px
+        font-size: 28px
+        position: relative
+
+      .jq-selectbox__trigger-arrow
+        box-sizing: border-box
+        width: 61px
+        height: 56px
+        position: absolute
+        right: 2px
+        top: 0
+        border-left: 2px solid #e28777
+        text-align: center
+        border-top-right-radius: 10px
+        border-bottom-right-radius: 10px
+        &::before
+          content: '▼'
+          color: $yello
+          line-height: 56px
+        &:hover
+          background: rgba(226, 135, 119, 0.3)
+          &::before
+            color: $oliva
+  &.modal-detale
+    .image
+      background: $white
+      border: 2px solid $yello
+      border-radius: 4px
+      text-align: center
+      height: 446px
+      img
+        object-fit: contain
+        height: 400px
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        min-height: 90%
+        min-width: 90%
+      &.small
+        height: 106px
+        margin-bottom: 20px
+        &:last-child
+          margin-bottom: 0
+        img
+          object-fit: contain
+          height: 100px
+      .plus
+        bottom: 15px
+        right: 15px
+        top: auto
+
+    .tow-cols
+      column-count: 2
+      column-gap: 30px
+      margin-top: 40px
+      .title
+        font-weight: 700
+        display: inline-block
+        margin-right: 12px
+      p
+        font-size: 16px
+        line-height: 26px
+        margin-bottom: 20px
+
+        &:last-child
+          margin-bottom: 0
+
+//popup
